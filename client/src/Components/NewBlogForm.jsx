@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Plus } from "lucide-react";
 import { useState } from "react";
-const NewBlogForm = () => {
+const NewBlogForm = ({ showModal, setShowModal }) => {
   const [currentImage, setCurrentImage] = useState("");
 
   const convertToBase64 = async (file) => {
@@ -47,6 +47,7 @@ const NewBlogForm = () => {
         }),
       });
       window.location.reload();
+      setShowModal(false);
     } catch (err) {
       console.log("Connot Add the blog: " + err);
     }

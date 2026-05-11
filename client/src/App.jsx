@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import NewBlogForm from "./Components/NewBlogForm";
+import { useState } from "react";
 import BlogCover from "./Components/BlogCover";
+import NewBlogForm from "./Components/NewBlogForm";
 const App = () => {
   return (
     <>
-      <NewBlogForm />
       <BlogCover />
     </>
   );

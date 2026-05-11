@@ -21,7 +21,7 @@ const formattedDate = (date) => {
 
 const Blog = ({ image, title, desc, category, date, content }) => {
   return (
-    <div className="rounded border border-purple-100 p-5 w-100">
+    <div className="rounded border border-black p-5 w-100">
       <img src={image || noBlogImage} alt="" className="rounded w-100 h-60" />
       <h1 className="text-xl font-semibold">
         {title || "Heading not scpecified"}
