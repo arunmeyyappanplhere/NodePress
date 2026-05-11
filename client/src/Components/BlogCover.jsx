@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Blog from "./Blog";
+import { useEffect } from "react";
 
 const BlogCover = () => {
   const [blogs, setBlogs] = useState([]);
@@ -16,7 +17,10 @@ const BlogCover = () => {
       console.log("Cannot fetch blogs: " + err);
     }
   };
-  getAllBlogs();
+
+  useEffect(() => {
+    getAllBlogs();
+  }, []);
 
   return (
     <div className="w-9/12 mx-auto pb-5 flex flex-col items-center justify-center bg-purple-200">
@@ -24,9 +28,21 @@ const BlogCover = () => {
         Blogs
       </h1>
       <div className="mt-3 flex gap-4">
-        <Blog />
-        <Blog />
-        <Blog />
+        {blogs ? (
+          blogs.map((blog, index) => (
+            <Blog
+              key={blog._id}
+              image={blog.Image}
+              title={blog.Title}
+              desc={blog.Desc}
+              content={blog.Content}
+              date={blog.Date}
+              category={blog.Category}
+            />
+          ))
+        ) : (
+          <h1 className="text-3xl font-semibold text-center">No blogs found</h1>
+        )}
       </div>
     </div>
   );
