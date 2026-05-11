@@ -1,9 +1,8 @@
-import React from 'react'
-
+import React from "react";
+import "./App.css";
+import NewBlogForm from "./Components/NewBlogForm";
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  return <NewBlogForm />;
+};
 
-export default App
+export default App;
