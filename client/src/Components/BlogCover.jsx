@@ -25,7 +25,7 @@ const BlogCover = () => {
   return (
     <div className="w-9/12 mx-auto pb-5 flex flex-col items-center  bg-purple-200 min-h-screen">
       <h1 className="text-center text-6xl font-bold uppercase flex justify-between p-5 bg-purple-400 text-white w-full">
-        Blogs
+        Node Press
         <button
           onClick={() => setShowModal(true)}
           className="flex text-3xl font-semibold gap-1 items-center bg-purple-600 rounded-xl p-3 cursor-pointer hover:bg-purple-700 transition"
