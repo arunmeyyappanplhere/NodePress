@@ -12,7 +12,7 @@ const BlogCover = () => {
         method: "GET",
       });
       const data = await fetchedBlogs.json();
-      setBlogs(data);
+      setBlogs(data.reverse());
     } catch (err) {
       console.log("Cannot fetch blogs: " + err);
     }
@@ -27,7 +27,7 @@ const BlogCover = () => {
       <h1 className="text-center text-6xl font-bold uppercase p-5 bg-purple-400 text-white w-full">
         Blogs
       </h1>
-      <div className="mt-3 flex gap-4">
+      <div className="mt-3 flex flex-wrap justify-center gap-4">
         {blogs ? (
           blogs.map((blog, index) => (
             <Blog

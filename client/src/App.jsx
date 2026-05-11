@@ -5,6 +5,7 @@ import BlogCover from "./Components/BlogCover";
 const App = () => {
   return (
     <>
+      <NewBlogForm />
       <BlogCover />
     </>
   );
